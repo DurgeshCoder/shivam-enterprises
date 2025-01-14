@@ -5,6 +5,7 @@ import { Flowbite } from "flowbite-react";
 import Footer from "@/components/Footer";
 import CustomNavbar from "@/components/CustomNavbar";
 import ScrollToTop from "@/components/ScrollToTop";
+import ReadingProgressBar from "@/components/ReadingProgressBar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,6 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className={`bg-gray-100 dark:bg-gray-900`}>
+        <ReadingProgressBar />
         <CustomNavbar />
         <Flowbite>{children}</Flowbite>
         <Footer />

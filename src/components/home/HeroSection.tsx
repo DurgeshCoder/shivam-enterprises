@@ -11,6 +11,7 @@ import dhoopPic3 from "@/assets/dhoop3.jpeg";
 import dhoopPic4 from "@/assets/dhoop4.jpeg";
 import dhoopPic5 from "@/assets/dhoop5.jpeg";
 import { Autoplay, Pagination, EffectCoverflow } from "swiper/modules";
+import Link from "next/link";
 
 const HeroSection = () => {
   const slides = [dhoopPic1, dhoopPic2, dhoopPic3, dhoopPic4, dhoopPic5];
@@ -34,12 +35,23 @@ const HeroSection = () => {
           sticks, made with natural ingredients and ancient wisdom.
         </p>
         <div className="flex flex-wrap justify-center md:justify-start gap-4">
-          <button className="bg-yellow-500 text-gray-100 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-600 transition duration-300">
-            Shop Now
-          </button>
-          <button className="border border-yellow-500 text-yellow-500 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 hover:text-black transition duration-300">
-            Contact Us
-          </button>
+          <Link
+            href={`https://wa.me/919434921654?text=I want buy dhoop batti`}
+            target="_blank"
+          >
+            <button className="bg-yellow-500 text-gray-100 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-600 transition duration-300">
+              Shop Now
+            </button>
+          </Link>
+
+          <Link
+            href={`https://wa.me/919434921654?text=I want buy dhoop batti`}
+            target="_blank"
+          >
+            <button className="border border-yellow-500 text-yellow-500 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 hover:text-black transition duration-300">
+              Contact Us
+            </button>
+          </Link>
         </div>
       </div>
 

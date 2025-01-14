@@ -1,6 +1,7 @@
 "use client";
 
 import { Button, DarkThemeToggle, Navbar } from "flowbite-react";
+import Link from "next/link";
 
 export default function CustomNavbar() {
   const scrollToSection = (e, id) => {
@@ -10,7 +11,7 @@ export default function CustomNavbar() {
 
   return (
     <Navbar>
-      <Navbar.Brand href="https://flowbite-react.com">
+      <Navbar.Brand href="#!">
         {/* <img
           src="/favicon.svg"
           className="mr-3 h-6 sm:h-9"
@@ -21,7 +22,12 @@ export default function CustomNavbar() {
         </span>
       </Navbar.Brand>
       <div className="flex md:order-2">
-        <Button className="bg-yellow-500 hidden md:block  dark:bg-yellow-500  rounded-lg font-semibold hover:bg-yellow-600 transition duration-300">
+        <Button
+          as={Link}
+          href={`https://wa.me/919434921654?text=I want buy dhoop batti`}
+          target="_blank"
+          className="bg-yellow-500 hidden md:block  dark:bg-yellow-500  rounded-lg font-semibold hover:bg-yellow-600 transition duration-300"
+        >
           Buy Now
         </Button>
         <DarkThemeToggle />
