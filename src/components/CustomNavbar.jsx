@@ -21,8 +21,8 @@ export default function CustomNavbar() {
         </span>
       </Navbar.Brand>
       <div className="flex md:order-2">
-        <Button className="bg-yellow-500   rounded-lg font-semibold hover:bg-yellow-600 transition duration-300">
-          Get started
+        <Button className="bg-yellow-500 hidden md:block  dark:bg-yellow-500  rounded-lg font-semibold hover:bg-yellow-600 transition duration-300">
+          Buy Now
         </Button>
         <DarkThemeToggle />
         <Navbar.Toggle />

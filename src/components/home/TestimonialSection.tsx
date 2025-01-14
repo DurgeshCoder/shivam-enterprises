@@ -51,7 +51,7 @@ const TestimonialSection = () => {
   const swiperRef = useRef<SwiperType | null>(null);
 
   return (
-    <div className="bg-gradient-to-b from-gray-900 to-black text-white py-16 px-6 relative">
+    <div className="bg-gradient-to-b px-10 from-gray-900 to-black text-white py-16 px-6 relative">
       <div className="max-w-6xl mx-auto relative">
         {/* Section Header */}
         <h2 className="text-4xl font-bold text-center mb-4">
