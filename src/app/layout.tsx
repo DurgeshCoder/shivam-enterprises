@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Flowbite } from "flowbite-react";
+import Footer from "@/components/Footer";
+import CustomNavbar from "@/components/CustomNavbar";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,11 +27,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+    <html lang="en" className="light">
+      <body className={`bg-gray-100 dark:bg-gray-900`}>
+        <CustomNavbar />
+        <Flowbite>{children}</Flowbite>
+        <Footer />
+        <ScrollToTop />
       </body>
     </html>
   );
