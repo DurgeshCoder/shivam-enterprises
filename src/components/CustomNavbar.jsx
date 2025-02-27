@@ -11,7 +11,7 @@ export default function CustomNavbar() {
 
   return (
     <Navbar>
-      <Navbar.Brand href="#!">
+      <Navbar.Brand href="/">
         {/* <img
           src="/favicon.svg"
           className="mr-3 h-6 sm:h-9"
@@ -34,7 +34,7 @@ export default function CustomNavbar() {
         <Navbar.Toggle />
       </div>
       <Navbar.Collapse>
-        <Navbar.Link href="#" active>
+        <Navbar.Link href="/" active>
           Home
         </Navbar.Link>
         <Navbar.Link
