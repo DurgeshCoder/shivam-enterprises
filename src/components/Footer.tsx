@@ -59,7 +59,7 @@ const Footer = () => {
           </p>
           <p className="flex items-center mb-3">
             <FaPhoneAlt className="text-yellow-500 mr-3" />
-            +91 9434921654
+            +91 9634921654
           </p>
           <div className="flex space-x-4 mt-4">
             <a
