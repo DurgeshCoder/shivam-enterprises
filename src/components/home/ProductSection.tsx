@@ -112,10 +112,12 @@ const ProductSection = () => {
                     Save {product.discount}%!
                   </p>
                   <Link
-                    href={`https://wa.me/919434921654?text=I want buy this : ${product.name}`}
+                    href={`https://wa.me/919634921654?text=I want buy this : ${product.name}`}
                     target="_blank"
                   >
-                    <div className="text-red-600 mb-3 animate-bounce">{product.note}</div>
+                    <div className="text-red-600 mb-3 animate-bounce">
+                      {product.note}
+                    </div>
                     <button className="bg-red-500 text-gray-100 px-4 py-2 rounded-lg font-semibold hover:bg-yellow-600 transition">
                       Buy Now
                     </button>
