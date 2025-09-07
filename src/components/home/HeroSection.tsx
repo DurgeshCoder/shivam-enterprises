@@ -36,7 +36,7 @@ const HeroSection = () => {
         </p>
         <div className="flex flex-wrap justify-center md:justify-start gap-4">
           <Link
-            href={`https://wa.me/919434921654?text=I want buy dhoop batti`}
+            href={`https://wa.me/919634921654?text=I want buy dhoop batti`}
             target="_blank"
           >
             <button className="bg-yellow-500 text-gray-100 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-600 transition duration-300">
@@ -45,7 +45,7 @@ const HeroSection = () => {
           </Link>
 
           <Link
-            href={`https://wa.me/919434921654?text=I want buy dhoop batti`}
+            href={`https://wa.me/919634921654?text=I want buy dhoop batti`}
             target="_blank"
           >
             <button className="border border-yellow-500 text-yellow-500 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 hover:text-black transition duration-300">
