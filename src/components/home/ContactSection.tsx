@@ -36,7 +36,7 @@ const ContactSection = () => {
             </p> */}
             <p className="flex items-center">
               <FaPhoneAlt className="text-yellow-500 mr-3" />
-              +91 9434921654
+              +91 9634921654
             </p>
           </div>
 
