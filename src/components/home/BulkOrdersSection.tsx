@@ -62,7 +62,7 @@ const BulkOrdersSection = () => {
                                 <FaPhoneAlt /> Call Now
                             </button>
                         </Link>
-                        <Link href="https://wa.me/919634921654?text=I am interested in bulk orders for Dhoop Batti." target="_blank">
+                        <Link href="https://wa.me/919634921654?text=I am interested in bulk orders" target="_blank">
                             <button className="w-full sm:w-auto px-8 py-4 bg-warm-gold-500 text-deep-purple-900 font-bold rounded-full shadow-lg shadow-warm-gold-500/20 hover:bg-warm-gold-600 transition-all hover:scale-105 flex items-center justify-center gap-2">
                                 <FaWhatsapp className="text-xl" /> WhatsApp Us
                             </button>

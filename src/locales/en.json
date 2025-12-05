@@ -1,0 +1,165 @@
+{
+    "hero": {
+        "title": "Pure & Natural Dhoop Batti for Your Daily Puja",
+        "subtitle": "Handcrafted in Dehradun with traditional methods, natural ingredients, and divine fragrance.",
+        "cta_whatsapp": "Buy on WhatsApp",
+        "cta_products": "View Products",
+        "badge_natural": "100% Natural",
+        "badge_handcrafted": "Handcrafted",
+        "badge_eco": "Eco-friendly"
+    },
+    "story": {
+        "title": "Our Story & Heritage",
+        "subtitle": "Rooted in Tradition, Crafted with Devotion",
+        "description": "At Shivam Enterprises, we believe in the power of purity. Located in the serene foothills of Dehradun, we have been crafting natural dhoop batti for generations. Our mission is to bring the divine fragrance of nature into your home, enhancing your spiritual connection and peace of mind.",
+        "feature_1_title": "Traditional Craftsmanship",
+        "feature_1_desc": "We follow ancient vedic methods to hand-roll each dhoop batti, ensuring authentic aroma and quality.",
+        "feature_2_title": "Natural Ingredients",
+        "feature_2_desc": "Made from pure cow dung, natural herbs, flowers, and essential oils. No charcoal or harmful chemicals.",
+        "feature_3_title": "Spiritual Connection",
+        "feature_3_desc": "Our fragrances are designed to create a calming atmosphere perfect for meditation, yoga, and daily puja."
+    },
+    "products": {
+        "title": "Our Premium Products",
+        "subtitle": "Experience the Divine Fragrance",
+        "price": "Price",
+        "discount_price": "Offer Price",
+        "buy_now": "Buy Now",
+        "items": {
+            "puja_cotton": {
+                "name": "Premium Puja Cotton",
+                "description": "100% Pure Cotton for daily puja rituals. Clean, soft, and perfect for diyas."
+            },
+            "dhoop_batti": {
+                "name": "Natural Dhoop Batti",
+                "description": "Handcrafted with natural herbs and essential oils. Creates a divine atmosphere."
+            }
+        }
+    },
+    "shop_by_need": {
+        "title": "Shop by Need",
+        "subtitle": "Find the perfect dhoop batti to enhance your well-being and lifestyle.",
+        "needs": {
+            "stress_relief": {
+                "title": "Stress Relief",
+                "desc": "Unwind after a long day with soothing fragrances that calm the mind and reduce anxiety."
+            },
+            "better_sleep": {
+                "title": "Better Sleep",
+                "desc": "Create a tranquil bedtime ritual with gentle scents that promote deep, restorative sleep."
+            },
+            "home_purification": {
+                "title": "Home Purification",
+                "desc": "Cleanse your living space of negative energy and odors with powerful, natural aromas."
+            },
+            "meditation_yoga": {
+                "title": "Meditation & Yoga",
+                "desc": "Deepen your spiritual practice and focus with grounding scents designed for mindfulness."
+            }
+        },
+        "link": "See Recommended Products"
+    },
+    "benefits": {
+        "title": "Why Choose Our Dhoop Batti?",
+        "subtitle": "Discover the unique benefits of our handcrafted, natural products designed for your well-being.",
+        "items": {
+            "stress_relief": {
+                "title": "Stress Relief",
+                "desc": "Natural aromatherapy properties help reduce stress and anxiety, promoting mental wellness."
+            },
+            "better_sleep": {
+                "title": "Better Sleep",
+                "desc": "Calming fragrances help create a peaceful environment conducive to quality sleep."
+            },
+            "home_purification": {
+                "title": "Home Purification",
+                "desc": "Natural fragrances help purify the air and create a soothing atmosphere for your home."
+            }
+        }
+    },
+    "process": {
+        "title": "How Our Dhoop Batti is Made",
+        "steps": {
+            "1": {
+                "title": "Selecting Natural Ingredients",
+                "desc": "We source the finest herbs, flowers, and essential oils from nature to ensure purity."
+            },
+            "2": {
+                "title": "Handcrafting with Tradition",
+                "desc": "Our artisans use age-old traditional methods to hand-roll each dhoop batti with care."
+            },
+            "3": {
+                "title": "Drying, Packaging & Blessing",
+                "desc": "Naturally dried, eco-friendly packaged, and blessed for a divine spiritual experience."
+            }
+        }
+    },
+    "testimonials": {
+        "title": "What Our Customers Say",
+        "subtitle": "Real stories from people who love our products."
+    },
+    "bulk": {
+        "title": "Bulk & Temple Orders",
+        "description": "We invite Temples, Yoga Centers, and Retail Shops to partner with us. Bring the divine fragrance of pure, handcrafted dhoop batti to your devotees and customers.",
+        "benefits": [
+            "Special Wholesale Pricing",
+            "Consistent Premium Quality",
+            "Reliable Regular Supply",
+            "Custom Packaging Options"
+        ],
+        "cta_call": "Call Now",
+        "cta_whatsapp": "WhatsApp Us"
+    },
+    "faq": {
+        "title": "Frequently Asked Questions",
+        "subtitle": "Have questions? We're here to help you understand our products better.",
+        "questions": {
+            "1": {
+                "q": "Are your dhoop battis made from 100% natural ingredients?",
+                "a": "Yes, absolutely. We use only 100% natural ingredients including pure cow dung, natural herbs, flowers, and essential oils. We do not use any charcoal or harmful chemicals."
+            },
+            "2": {
+                "q": "Do you use any chemicals or synthetic fragrances?",
+                "a": "No, we strictly avoid synthetic fragrances and chemicals. Our fragrances come from natural essential oils and dried flowers, ensuring a safe and divine experience."
+            },
+            "3": {
+                "q": "How long does one dhoop batti burn?",
+                "a": "Our handcrafted dhoop battis are designed to burn for approximately 45 to 60 minutes, providing a long-lasting and soothing aroma for your puja or meditation."
+            },
+            "4": {
+                "q": "Do you provide bulk or temple orders?",
+                "a": "Yes, we specialize in bulk orders for temples, yoga centers, and retail shops. We offer special wholesale pricing and custom packaging options. Please check our 'Bulk & Temple Orders' section for more details."
+            },
+            "5": {
+                "q": "How can I place an order via WhatsApp?",
+                "a": "It's very simple! Just click on the 'Buy on WhatsApp' button anywhere on our website or visit our Contact section. It will open a chat with us where you can tell us your requirements, and we will confirm your order instantly."
+            },
+            "6": {
+                "q": "Do you ship outside Dehradun?",
+                "a": "Yes, we ship across India. While we are based in Dehradun, we ensure our premium dhoop battis reach you wherever you are. Shipping charges may vary based on location and order size."
+            }
+        }
+    },
+    "contact": {
+        "title": "Get In Touch",
+        "visit_us": "Visit Us",
+        "call_us": "Call Us",
+        "connect": "Connect With Us",
+        "about_us": "Located in the serene foothills of Dehradun, Shivam Enterprises is dedicated to crafting pure, natural dhoop batti using traditional methods."
+    },
+    "footer": {
+        "about_us": "About Us",
+        "about_desc": "We provide the purest, handcrafted dhoop battis for meditation and spiritual wellness. Our products are made with natural ingredients and age-old techniques.",
+        "quick_links": "Quick Links",
+        "contact_us": "Contact Us",
+        "copyright": "© 2025 PujaItem.in. All rights reserved."
+    },
+    "navbar": {
+        "home": "Home",
+        "about": "About",
+        "products": "Products",
+        "testimonials": "Testimonials",
+        "contact": "Contact",
+        "buy_whatsapp": "Buy on WhatsApp"
+    }
+}

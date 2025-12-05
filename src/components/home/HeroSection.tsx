@@ -80,7 +80,7 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
             className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-4"
           >
-            <Link href="https://wa.me/919434921654?text=I want buy dhoop batti" target="_blank">
+            <Link href="https://wa.me/919634921654?text=I want buy dhoop batti" target="_blank">
               <button className="w-full sm:w-auto px-8 py-4 bg-warm-gold-500 hover:bg-warm-gold-600 text-deep-purple-900 font-bold rounded-full shadow-lg shadow-warm-gold-500/20 transition-all hover:scale-105 hover:shadow-warm-gold-500/40 flex items-center justify-center gap-2 relative overflow-hidden group">
                 <span className="absolute inset-0 w-full h-full bg-white/20 transform -translate-x-full group-hover:translate-x-full transition-transform duration-500 ease-in-out"></span>
                 <FaWhatsapp className="text-xl" /> Buy on WhatsApp
@@ -144,7 +144,7 @@ const HeroSection = () => {
 
       {/* Floating WhatsApp Button */}
       <Link
-        href="https://wa.me/919434921654?text=Hi, I'm interested in your Dhoop Batti products."
+        href="https://wa.me/919634921654?text=Hi, I'm interested in your Dhoop Batti products."
         target="_blank"
         className="fixed bottom-24 right-6 z-50 animate-float"
       >

@@ -126,7 +126,7 @@ const ProductSection = () => {
 
                   <div className="pt-4">
                     <Link
-                      href={`https://wa.me/919434921654?text=I want buy this : ${product.name}`}
+                      href={`https://wa.me/919634921654?text=I want buy this : ${product.name}`}
                       target="_blank"
                     >
                       <button className="w-full md:w-auto px-12 py-4 bg-warm-gold-500 hover:bg-warm-gold-600 text-deep-purple-900 font-bold rounded-full shadow-lg shadow-warm-gold-500/20 transition-all hover:scale-105 hover:shadow-warm-gold-500/40 text-lg">

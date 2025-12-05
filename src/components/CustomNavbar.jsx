@@ -39,7 +39,7 @@ export default function CustomNavbar() {
       <div className="flex md:order-2">
         <Button
           as={Link}
-          href="https://wa.me/919434921654?text=I want buy dhoop batti"
+          href="https://wa.me/919634921654?text=I want buy dhoop batti"
           target="_blank"
           className="bg-warm-gold-500 hover:bg-warm-gold-600 text-deep-purple-900 font-bold rounded-full px-4 transition-transform hover:scale-105"
         >
