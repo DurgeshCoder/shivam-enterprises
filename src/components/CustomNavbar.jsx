@@ -1,63 +1,69 @@
 "use client";
 
-import { Button, DarkThemeToggle, Navbar } from "flowbite-react";
+import { Button, Navbar } from "flowbite-react";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export default function CustomNavbar() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const scrollToSection = (e, id) => {
     e.preventDefault();
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
-    <Navbar>
+    <Navbar
+      fluid
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled
+        ? "bg-deep-purple-900/80 backdrop-blur-md border-b border-white/10 py-4"
+        : "bg-transparent py-6"
+        }`}
+    >
       <Navbar.Brand href="/">
-        {/* <img
-          src="/favicon.svg"
-          className="mr-3 h-6 sm:h-9"
-          alt="Flowbite React Logo"
-        /> */}
-        <span className="self-center whitespace-nowrap text-xl font-semibold text-gray-900 dark:text-white">
-          Shivam Enterprises
+        <span className="self-center whitespace-nowrap text-2xl font-serif font-bold text-warm-gold-400">
+          PujaItem.in - Shivam Enterprises
         </span>
       </Navbar.Brand>
       <div className="flex md:order-2">
         <Button
           as={Link}
-          href={`https://wa.me/919434921654?text=I want buy dhoop batti`}
+          href="https://wa.me/919434921654?text=I want buy dhoop batti"
           target="_blank"
-          className="bg-yellow-500 hidden md:block  dark:bg-yellow-500  rounded-lg font-semibold hover:bg-yellow-600 transition duration-300"
+          className="bg-warm-gold-500 hover:bg-warm-gold-600 text-deep-purple-900 font-bold rounded-full px-4 transition-transform hover:scale-105"
         >
-          Buy Now
+          Buy on WhatsApp
         </Button>
-        <DarkThemeToggle />
-        <Navbar.Toggle />
+        <Navbar.Toggle className="text-warm-gold-400 hover:bg-white/10" />
       </div>
       <Navbar.Collapse>
-        <Navbar.Link href="/" active>
-          Home
-        </Navbar.Link>
-        <Navbar.Link
-          href="#!"
-          onClick={(event) => scrollToSection(event, "story")}
-        >
-          About
-        </Navbar.Link>
-        <Navbar.Link
-          href="#!"
-          onClick={(event) => scrollToSection(event, "products")}
-        >
-          Products
-        </Navbar.Link>
-        {/* <Navbar.Link href="#">Services</Navbar.Link> */}
-        <Navbar.Link
-          href="#!"
-          onClick={(e) => {
-            scrollToSection(e, "contact");
-          }}
-        >
-          Contact
-        </Navbar.Link>
+        {[
+          { name: "Home", id: "hero" },
+          { name: "About", id: "story" },
+          { name: "Products", id: "products" },
+          { name: "Testimonials", id: "testimonials" },
+          { name: "Contact", id: "contact" },
+        ].map((item) => (
+          <Navbar.Link
+            key={item.name}
+            href={`#${item.id}`}
+            onClick={(e) => scrollToSection(e, item.id)}
+            className="text-gray-300 hover:text-warm-gold-400 text-lg font-medium transition-colors md:hover:bg-transparent"
+          >
+            {item.name}
+          </Navbar.Link>
+        ))}
       </Navbar.Collapse>
     </Navbar>
   );

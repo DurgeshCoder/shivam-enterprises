@@ -5,99 +5,103 @@ import {
   FaInstagram,
   FaTwitter,
   FaYoutube,
-  FaEnvelope,
   FaPhoneAlt,
+  FaMapMarkerAlt,
 } from "react-icons/fa";
 
 const Footer = () => {
+  const scrollToSection = (e: React.MouseEvent, id: string) => {
+    e.preventDefault();
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <footer className="bg-gray-900 dark:bg-black text-gray-300 py-10 px-6">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-        {/* About Us */}
-        <div>
-          <h3 className="text-xl font-bold text-white mb-4">About Us</h3>
-          <p className="text-gray-400">
+    <footer className="relative bg-black text-white py-16 px-6 overflow-hidden">
+      {/* Background Glow */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-1 bg-gradient-to-r from-transparent via-warm-gold-500 to-transparent opacity-50"></div>
+
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 relative z-10">
+        {/* Brand Info */}
+        <div className="space-y-6">
+          <h3 className="text-3xl font-serif font-bold text-warm-gold-400">PujaItem.in</h3>
+          <p className="text-gray-400 leading-relaxed">
             We provide the purest, handcrafted dhoop battis for meditation and
             spiritual wellness. Our products are made with natural ingredients
             and age-old techniques.
           </p>
+          <div className="flex space-x-4">
+            {[
+              { icon: <FaFacebook />, label: "Facebook" },
+              { icon: <FaInstagram />, label: "Instagram" },
+              { icon: <FaTwitter />, label: "Twitter" },
+              { icon: <FaYoutube />, label: "YouTube" },
+            ].map((social, index) => (
+              <a
+                key={index}
+                href="#"
+                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-gray-400 hover:bg-warm-gold-500 hover:text-deep-purple-900 transition-all duration-300 hover:scale-110"
+                aria-label={social.label}
+              >
+                {social.icon}
+              </a>
+            ))}
+          </div>
         </div>
 
-        {/* Links */}
+        {/* Quick Links */}
         <div>
-          <h3 className="text-xl font-bold text-white mb-4">Quick Links</h3>
-          <ul className="space-y-2">
-            <li>
-              <a href="#" className="hover:text-yellow-500 transition">
-                Home
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-yellow-500 transition">
-                About Us
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-yellow-500 transition">
-                Products
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-yellow-500 transition">
-                Contact
-              </a>
-            </li>
+          <h3 className="text-xl font-bold text-white mb-6">Quick Links</h3>
+          <ul className="space-y-4">
+            {[
+              { name: "Home", id: "hero" },
+              { name: "About Us", id: "story" },
+              { name: "Products", id: "products" },
+              { name: "Contact", id: "contact" },
+            ].map((link) => (
+              <li key={link.name}>
+                <a
+                  href={`#${link.id}`}
+                  onClick={(e) => scrollToSection(e, link.id)}
+                  className="text-gray-400 hover:text-warm-gold-400 transition-colors flex items-center gap-2 group"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-warm-gold-500 opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                  {link.name}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
 
-        {/* Contact */}
+        {/* Contact Info */}
         <div>
-          <h3 className="text-xl font-bold text-white mb-4">Contact Us</h3>
-          <p className="flex items-center mb-3">
-            <FaEnvelope className="text-yellow-500 mr-3" />
-            info@dhoopbatti.com
-          </p>
-          <p className="flex items-center mb-3">
-            <FaPhoneAlt className="text-yellow-500 mr-3" />
-            +91 9634921654
-          </p>
-          <div className="flex space-x-4 mt-4">
-            <a
-              href="#"
-              className="text-gray-400 hover:text-yellow-500 transition"
-              aria-label="Facebook"
-            >
-              <FaFacebook size={24} />
-            </a>
-            <a
-              href="#"
-              className="text-gray-400 hover:text-yellow-500 transition"
-              aria-label="Instagram"
-            >
-              <FaInstagram size={24} />
-            </a>
-            <a
-              href="#"
-              className="text-gray-400 hover:text-yellow-500 transition"
-              aria-label="Twitter"
-            >
-              <FaTwitter size={24} />
-            </a>
-            <a
-              href="#"
-              className="text-gray-400 hover:text-yellow-500 transition"
-              aria-label="YouTube"
-            >
-              <FaYoutube size={24} />
-            </a>
+          <h3 className="text-xl font-bold text-white mb-6">Contact Us</h3>
+          <div className="space-y-4">
+            <div className="flex items-start gap-4">
+              <FaMapMarkerAlt className="text-warm-gold-500 mt-1 flex-shrink-0" />
+              <p className="text-gray-400">
+                Shivam Enterprises<br />
+                Prem Vihar Colony (Near Sai Garden)<br />
+                Haripur Kala, Dehradun<br />
+                PIN: 249205, INDIA
+              </p>
+            </div>
+            <div className="flex items-center gap-4">
+              <FaPhoneAlt className="text-warm-gold-500 flex-shrink-0" />
+              <a href="tel:+919634921654" className="text-gray-400 hover:text-warm-gold-400 transition-colors">
+                +91 9634921654
+              </a>
+            </div>
           </div>
         </div>
       </div>
 
       {/* Footer Bottom */}
-      <div className="border-t border-gray-700 mt-10 pt-4 text-center">
-        <p className="text-gray-400">
-          © 2025 Dhoop Batti. All rights reserved.
+      <div className="border-t border-white/10 mt-16 pt-8 text-center">
+        <p className="text-gray-500 text-sm">
+          © {new Date().getFullYear()} PujaItem.in. All rights reserved.
         </p>
       </div>
     </footer>

@@ -3,35 +3,22 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #1a0b2e;
+  --foreground: #ffffff;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+  font-family: var(--font-inter), sans-serif;
 }
 
-.animate-gradient {
-  background-size: 200% 200%;
-  animation: gradient 6s ease infinite;
+@layer utilities {
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-lg border border-white/10 shadow-xl;
+  }
+  
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-warm-gold-300 to-warm-gold-500;
+  }
 }

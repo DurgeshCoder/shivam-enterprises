@@ -7,69 +7,65 @@ const benefits = [
     title: "Stress Relief",
     description:
       "Natural aromatherapy properties help reduce stress and anxiety, promoting mental wellness.",
-    icon: <FaHeart />,
+    icon: <FaHeart className="text-3xl" />,
   },
   {
     id: 2,
     title: "Better Sleep",
     description:
       "Calming fragrances help create a peaceful environment conducive to quality sleep.",
-    icon: <FaMoon />,
+    icon: <FaMoon className="text-3xl" />,
   },
   {
     id: 3,
     title: "Home Purification",
     description:
       "Natural fragrances help purify the air and create a soothing atmosphere for your home.",
-    icon: <FaHome />,
+    icon: <FaHome className="text-3xl" />,
   },
 ];
 
 const BenefitsSection = () => {
   return (
-    <div className="relative bg-gradient-to-b from-gray-50 via-white to-gray-100 dark:from-gray-800 dark:via-gray-900 dark:to-black py-16 px-6">
-      {/* Background Effect */}
-      <div className="absolute inset-0 z-0 bg-gradient-to-br from-yellow-400 via-red-400 to-purple-500 opacity-10 blur-lg"></div>
+    <section className="relative py-24 px-6 bg-deep-purple-950 overflow-hidden">
+      {/* Background Glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-gradient-to-b from-deep-purple-900 to-deep-purple-950"></div>
+      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-warm-gold-500/10 rounded-full blur-[100px]"></div>
 
-      <div className="relative z-10 max-w-6xl mx-auto">
-        {/* Section Header */}
-        <h2 className="text-4xl font-extrabold text-center text-gray-900 dark:text-white">
-          Why Choose Our Dhoop Batti?
-        </h2>
-        <p className="text-center text-gray-600 dark:text-gray-300 mt-4">
-          Discover the unique benefits of our handcrafted, natural products.
-        </p>
-        <div className="border-t-4 border-yellow-500 w-20 mx-auto my-8"></div>
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="text-center mb-20">
+          <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4">
+            Why Choose Our <span className="text-gradient">Dhoop Batti?</span>
+          </h2>
+          <p className="text-gray-300 text-lg max-w-2xl mx-auto">
+            Discover the unique benefits of our handcrafted, natural products designed for your well-being.
+          </p>
+          <div className="w-24 h-1 bg-gradient-to-r from-warm-gold-300 to-warm-gold-500 mx-auto rounded-full mt-6"></div>
+        </div>
 
-        {/* Benefits Cards */}
-        <div className="grid md:grid-cols-3  gap-8 mt-16">
+        <div className="grid md:grid-cols-3 gap-12">
           {benefits.map((benefit) => (
             <div
               key={benefit.id}
-              className="relative bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 hover:shadow-2xl transition-transform transform hover:scale-105 hover:-translate-y-3 group"
+              className="glass-card p-8 rounded-2xl relative group hover:bg-white/10 transition-all duration-300 mt-8"
             >
-              {/* Icon Section */}
-              <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-gradient-to-tr from-yellow-400 to-yellow-600 text-white w-16 h-16 flex items-center justify-center rounded-full shadow-md group-hover:rotate-12 group-hover:scale-110 transition-transform">
+              <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-20 h-20 bg-gradient-to-br from-warm-gold-400 to-warm-gold-600 rounded-full flex items-center justify-center text-deep-purple-900 shadow-lg shadow-warm-gold-500/30 group-hover:scale-110 transition-transform duration-300">
                 {benefit.icon}
               </div>
 
-              {/* Card Content */}
-              <div className="mt-8 text-center">
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+              <div className="mt-12 text-center">
+                <h3 className="text-2xl font-bold text-white mb-4">
                   {benefit.title}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-300">
+                <p className="text-gray-300 leading-relaxed">
                   {benefit.description}
                 </p>
               </div>
-
-              {/* Glowing Border Effect */}
-              <div className="absolute inset-0 rounded-xl border-2 border-transparent group-hover:border-yellow-500 transition-all"></div>
             </div>
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

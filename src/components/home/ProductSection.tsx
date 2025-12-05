@@ -4,6 +4,7 @@ import React from "react";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
+import Image from "next/image";
 
 import product1 from "@/assets/products/product1.jpeg";
 import product2 from "@/assets/products/product2.jpeg";
@@ -16,14 +17,15 @@ import product8 from "@/assets/products/product8.jpeg";
 
 import { Autoplay, Pagination, EffectCoverflow } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+
 const products = [
   {
     id: 1,
     name: "Puja Cotton or Vicks",
     description:
-      'Puja Cotton is a premium quality cotton designed specifically for religious rituals, prayers, and spiritual offerings. Soft, pure, and absorbent, it is the perfect choice for creating sacred offerings like "cotton wicks" and "cotton balls" used during Puja ceremonies. ',
+      'Puja Cotton is a premium quality cotton designed specifically for religious rituals, prayers, and spiritual offerings. Soft, pure, and absorbent, it is the perfect choice for creating sacred offerings like "cotton wicks" and "cotton balls" used during Puja ceremonies.',
     price: 160,
-    discount: 40, // 20% discount
+    discount: 40,
     emoji: "🕉️",
     note: "Buy 2 bundles and get 1 free",
     images: [
@@ -41,17 +43,18 @@ const products = [
 
 const ProductSection = () => {
   return (
-    <div className="relative py-16 " id="products">
-      {/* Gradient Background Animation */}
-      <div className="absolute inset-0 z-0 animate-gradient bg-gradient-to-r from-yellow-500 via-pink-500 to-purple-500 blur-lg opacity-20"></div>
+    <section id="products" className="relative py-24 px-6 bg-deep-purple-900 overflow-hidden">
+      {/* Background Glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-warm-gold-500/10 rounded-full blur-[120px] pointer-events-none"></div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
-        <h2 className="text-3xl font-bold text-center mb-4 text-gray-900 dark:text-white">
-          Our Premium Products
-        </h2>
-        <div className="border-t-4 border-yellow-500 w-20 mx-auto mb-10"></div>
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4">
+            Our Premium <span className="text-gradient">Products</span>
+          </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-warm-gold-300 to-warm-gold-500 mx-auto rounded-full"></div>
+        </div>
 
-        {/* Product Cards */}
         <div className="flex justify-center">
           {products.map((product) => {
             const discountedPrice = (
@@ -62,73 +65,82 @@ const ProductSection = () => {
             return (
               <div
                 key={product.id}
-                className="bg-white w-full md:w-1/2 dark:bg-gray-800 rounded-lg shadow-lg flex flex-col items-center hover:shadow-xl transition-transform transform hover:scale-105"
+                className="glass-card w-full md:w-2/3 lg:w-1/2 rounded-3xl overflow-hidden hover:shadow-warm-gold-500/20 transition-all duration-500 group"
               >
-                <div className="w-full">
+                <div className="w-full relative">
                   <Swiper
                     effect="coverflow"
                     modules={[Autoplay, Pagination, EffectCoverflow]}
                     centeredSlides={true}
                     grabCursor={true}
                     coverflowEffect={{
-                      rotate: 50,
+                      rotate: 0,
                       stretch: 0,
                       depth: 100,
                       modifier: 1,
-                      slideShadows: true,
+                      slideShadows: false,
                     }}
-                    autoplay={{ delay: 2000, disableOnInteraction: false }}
+                    autoplay={{ delay: 3000, disableOnInteraction: false }}
                     pagination={{ clickable: true }}
                     loop={true}
-                    spaceBetween={20}
                     slidesPerView={1}
-                    className="w-full h-96   mySwiper"
+                    className="w-full h-[400px] md:h-[500px]"
                   >
                     {product.images.map((slide, index) => (
                       <SwiperSlide key={index}>
-                        <img
-                          className="w-full h-full rounded-lg object-cover shadow-lg"
-                          src={slide?.src}
-                          alt={`Slide ${index + 1}`}
+                        <Image
+                          src={slide}
+                          alt={`${product.name} - Image ${index + 1}`}
+                          className="w-full h-full object-cover"
+                          width={800}
+                          height={500}
                         />
                       </SwiperSlide>
                     ))}
                   </Swiper>
+
+                  {/* Discount Badge */}
+                  <div className="absolute top-4 right-4 z-20 bg-red-500 text-white font-bold px-4 py-2 rounded-full shadow-lg animate-pulse">
+                    {product.discount}% OFF
+                  </div>
                 </div>
-                <div className="p-4 text-center">
-                  <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">
+
+                <div className="p-8 text-center space-y-6">
+                  <h3 className="text-3xl font-serif font-bold text-white">
                     {product.name}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">
+                  <p className="text-gray-300 leading-relaxed">
                     {product.description}
                   </p>
-                  <div className="text-green-500 font-bold text-xl">
-                    ₹{discountedPrice}{" "}
-                    <span className="line-through text-gray-400 text-sm">
-                      ₹{product.price}
-                    </span>
+
+                  <div className="flex items-center justify-center gap-4">
+                    <span className="text-4xl font-bold text-warm-gold-400">₹{discountedPrice}</span>
+                    <span className="text-xl text-gray-500 line-through">₹{product.price}</span>
                   </div>
-                  <p className="text-green-500 font-semibold text-sm mb-4">
-                    Save {product.discount}%!
-                  </p>
-                  <Link
-                    href={`https://wa.me/919634921654?text=I want buy this : ${product.name}`}
-                    target="_blank"
-                  >
-                    <div className="text-red-600 mb-3 animate-bounce">
+
+                  {product.note && (
+                    <div className="inline-block bg-warm-gold-500/20 border border-warm-gold-500/30 text-warm-gold-300 px-4 py-2 rounded-full text-sm font-semibold animate-bounce">
                       {product.note}
                     </div>
-                    <button className="bg-red-500 text-gray-100 px-4 py-2 rounded-lg font-semibold hover:bg-yellow-600 transition">
-                      Buy Now
-                    </button>
-                  </Link>
+                  )}
+
+                  <div className="pt-4">
+                    <Link
+                      href={`https://wa.me/919434921654?text=I want buy this : ${product.name}`}
+                      target="_blank"
+                    >
+                      <button className="w-full md:w-auto px-12 py-4 bg-warm-gold-500 hover:bg-warm-gold-600 text-deep-purple-900 font-bold rounded-full shadow-lg shadow-warm-gold-500/20 transition-all hover:scale-105 hover:shadow-warm-gold-500/40 text-lg">
+                        Buy Now
+                      </button>
+                    </Link>
+                  </div>
                 </div>
               </div>
             );
           })}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
