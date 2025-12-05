@@ -28,7 +28,7 @@ const BenefitsSection = () => {
   ];
 
   return (
-    <section className="relative py-24 px-6 bg-deep-purple-950 overflow-hidden">
+    <section id="benefits" className="relative py-24 px-6 bg-deep-purple-950 overflow-hidden">
       {/* Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-gradient-to-b from-deep-purple-900 to-deep-purple-950"></div>
       <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-warm-gold-500/10 rounded-full blur-[100px]"></div>

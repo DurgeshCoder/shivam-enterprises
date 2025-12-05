@@ -29,7 +29,7 @@ const ProcessSection = () => {
     ];
 
     return (
-        <section className="relative py-24 px-6 bg-deep-purple-900 overflow-hidden">
+        <section id="process" className="relative py-24 px-6 bg-deep-purple-900 overflow-hidden">
             {/* Background Gradient/Glow */}
             <div className="absolute inset-0 bg-gradient-to-b from-deep-purple-900 via-deep-purple-800 to-deep-purple-900 opacity-50"></div>
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-warm-gold-500/5 rounded-full blur-[120px] pointer-events-none"></div>
