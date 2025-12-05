@@ -8,8 +8,11 @@ import {
   FaTwitter,
   FaWhatsapp,
 } from "react-icons/fa";
+import { useLanguage } from "@/context/LanguageContext";
 
 const ContactSection = () => {
+  const { t } = useLanguage();
+
   return (
     <section id="contact" className="relative py-24 px-6 bg-deep-purple-900 overflow-hidden">
       {/* Background Glow */}
@@ -18,7 +21,7 @@ const ContactSection = () => {
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4">
-            Get In <span className="text-gradient">Touch</span>
+            {t("contact.title")}
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-warm-gold-300 to-warm-gold-500 mx-auto rounded-full"></div>
         </div>
@@ -29,7 +32,7 @@ const ContactSection = () => {
             <div className="w-12 h-12 bg-warm-gold-500/20 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
               <FaMapMarkerAlt className="text-2xl text-warm-gold-400" />
             </div>
-            <h3 className="text-xl font-bold text-white mb-4">Visit Us</h3>
+            <h3 className="text-xl font-bold text-white mb-4">{t("contact.visit_us")}</h3>
             <p className="text-gray-300 leading-relaxed mb-4">
               Shivam Enterprises<br />
               Prem Vihar Colony (Near Sai Garden)<br />
@@ -37,7 +40,7 @@ const ContactSection = () => {
               PIN: 249205, INDIA
             </p>
             <p className="text-gray-400 text-sm">
-              Located in the serene foothills of Dehradun, Shivam Enterprises is dedicated to crafting pure, natural dhoop batti using traditional methods.
+              {t("contact.about_us")}
             </p>
           </div>
 
@@ -46,7 +49,7 @@ const ContactSection = () => {
             <div className="w-12 h-12 bg-warm-gold-500/20 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
               <FaPhoneAlt className="text-2xl text-warm-gold-400" />
             </div>
-            <h3 className="text-xl font-bold text-white mb-4">Call Us</h3>
+            <h3 className="text-xl font-bold text-white mb-4">{t("contact.call_us")}</h3>
             <p className="text-gray-300 mb-2">Mon - Sat: 9:00 AM - 7:00 PM</p>
             <a href="tel:+919634921654" className="text-2xl font-bold text-warm-gold-400 hover:text-warm-gold-300 transition-colors">
               +91 9634921654
@@ -58,7 +61,7 @@ const ContactSection = () => {
             <div className="w-12 h-12 bg-warm-gold-500/20 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
               <FaWhatsapp className="text-2xl text-warm-gold-400" />
             </div>
-            <h3 className="text-xl font-bold text-white mb-4">Connect With Us</h3>
+            <h3 className="text-xl font-bold text-white mb-4">{t("contact.connect")}</h3>
             <div className="flex gap-4">
               {[
                 { icon: <FaFacebook />, label: "Facebook" },

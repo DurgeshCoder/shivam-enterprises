@@ -3,43 +3,45 @@ import React from "react";
 import { FaHeart, FaMoon, FaHome, FaOm, FaArrowRight } from "react-icons/fa";
 import { motion } from "framer-motion";
 import Link from "next/link";
-
-const needs = [
-    {
-        id: 1,
-        title: "Stress Relief",
-        description: "Unwind after a long day with soothing fragrances that calm the mind and reduce anxiety.",
-        icon: <FaHeart className="text-4xl" />,
-        gradient: "from-pink-500 to-rose-500",
-    },
-    {
-        id: 2,
-        title: "Better Sleep",
-        description: "Create a tranquil bedtime ritual with gentle scents that promote deep, restorative sleep.",
-        icon: <FaMoon className="text-4xl" />,
-        gradient: "from-indigo-400 to-blue-600",
-    },
-    {
-        id: 3,
-        title: "Home Purification",
-        description: "Cleanse your living space of negative energy and odors with powerful, natural aromas.",
-        icon: <FaHome className="text-4xl" />,
-        gradient: "from-emerald-400 to-green-600",
-    },
-    {
-        id: 4,
-        title: "Meditation & Yoga",
-        description: "Deepen your spiritual practice and focus with grounding scents designed for mindfulness.",
-        icon: <FaOm className="text-4xl" />,
-        gradient: "from-orange-400 to-amber-600",
-    },
-];
+import { useLanguage } from "@/context/LanguageContext";
 
 const ShopByNeedSection = () => {
+    const { t } = useLanguage();
+
+    const needs = [
+        {
+            id: 1,
+            title: t("shop_by_need.needs.stress_relief.title"),
+            description: t("shop_by_need.needs.stress_relief.desc"),
+            icon: <FaHeart className="text-4xl" />,
+            gradient: "from-pink-500 to-rose-500",
+        },
+        {
+            id: 2,
+            title: t("shop_by_need.needs.better_sleep.title"),
+            description: t("shop_by_need.needs.better_sleep.desc"),
+            icon: <FaMoon className="text-4xl" />,
+            gradient: "from-indigo-400 to-blue-600",
+        },
+        {
+            id: 3,
+            title: t("shop_by_need.needs.home_purification.title"),
+            description: t("shop_by_need.needs.home_purification.desc"),
+            icon: <FaHome className="text-4xl" />,
+            gradient: "from-emerald-400 to-green-600",
+        },
+        {
+            id: 4,
+            title: t("shop_by_need.needs.meditation_yoga.title"),
+            description: t("shop_by_need.needs.meditation_yoga.desc"),
+            icon: <FaOm className="text-4xl" />,
+            gradient: "from-orange-400 to-amber-600",
+        },
+    ];
+
     return (
         <section id="shop-by-need" className="relative py-24 px-6 bg-deep-purple-950 overflow-hidden">
             {/* Background Elements */}
-            <div className="absolute top-0 left-0 w-full h-full bg-[url('/noise.png')] opacity-5 pointer-events-none"></div>
             <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-warm-gold-500/5 rounded-full blur-[120px] pointer-events-none"></div>
 
             <div className="max-w-7xl mx-auto relative z-10">
@@ -50,7 +52,7 @@ const ShopByNeedSection = () => {
                         viewport={{ once: true }}
                         className="text-4xl md:text-5xl font-serif font-bold text-white mb-4"
                     >
-                        Shop by <span className="text-gradient">Need</span>
+                        {t("shop_by_need.title")}
                     </motion.h2>
                     <motion.div
                         initial={{ width: 0 }}
@@ -65,7 +67,7 @@ const ShopByNeedSection = () => {
                         transition={{ delay: 0.2 }}
                         className="text-gray-300 mt-6 max-w-2xl mx-auto text-lg"
                     >
-                        Find the perfect dhoop batti to enhance your well-being and lifestyle.
+                        {t("shop_by_need.subtitle")}
                     </motion.p>
                 </div>
 
@@ -93,7 +95,7 @@ const ShopByNeedSection = () => {
                             </p>
 
                             <Link href="#products" className="inline-flex items-center text-warm-gold-400 text-sm font-semibold group-hover:text-warm-gold-300 transition-colors mt-auto">
-                                See Recommended Products
+                                {t("shop_by_need.link")}
                                 <FaArrowRight className="ml-2 transform group-hover:translate-x-1 transition-transform" />
                             </Link>
 

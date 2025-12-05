@@ -8,8 +8,11 @@ import {
   FaPhoneAlt,
   FaMapMarkerAlt,
 } from "react-icons/fa";
+import { useLanguage } from "@/context/LanguageContext";
 
 const Footer = () => {
+  const { t } = useLanguage();
+
   const scrollToSection = (e: React.MouseEvent, id: string) => {
     e.preventDefault();
     const element = document.getElementById(id);
@@ -28,9 +31,7 @@ const Footer = () => {
         <div className="space-y-6">
           <h3 className="text-3xl font-serif font-bold text-warm-gold-400">PujaItem.in</h3>
           <p className="text-gray-400 leading-relaxed">
-            We provide the purest, handcrafted dhoop battis for meditation and
-            spiritual wellness. Our products are made with natural ingredients
-            and age-old techniques.
+            {t("footer.about_desc")}
           </p>
           <div className="flex space-x-4">
             {[
@@ -53,13 +54,13 @@ const Footer = () => {
 
         {/* Quick Links */}
         <div>
-          <h3 className="text-xl font-bold text-white mb-6">Quick Links</h3>
+          <h3 className="text-xl font-bold text-white mb-6">{t("footer.quick_links")}</h3>
           <ul className="space-y-4">
             {[
-              { name: "Home", id: "hero" },
-              { name: "About Us", id: "story" },
-              { name: "Products", id: "products" },
-              { name: "Contact", id: "contact" },
+              { name: t("navbar.home"), id: "hero" },
+              { name: t("navbar.about"), id: "story" },
+              { name: t("navbar.products"), id: "products" },
+              { name: t("navbar.contact"), id: "contact" },
             ].map((link) => (
               <li key={link.name}>
                 <a
@@ -77,7 +78,7 @@ const Footer = () => {
 
         {/* Contact Info */}
         <div>
-          <h3 className="text-xl font-bold text-white mb-6">Contact Us</h3>
+          <h3 className="text-xl font-bold text-white mb-6">{t("footer.contact_us")}</h3>
           <div className="space-y-4">
             <div className="flex items-start gap-4">
               <FaMapMarkerAlt className="text-warm-gold-500 mt-1 flex-shrink-0" />
@@ -101,7 +102,7 @@ const Footer = () => {
       {/* Footer Bottom */}
       <div className="border-t border-white/10 mt-16 pt-8 text-center">
         <p className="text-gray-500 text-sm">
-          © {new Date().getFullYear()} PujaItem.in. All rights reserved.
+          {t("footer.copyright")}
         </p>
       </div>
     </footer>

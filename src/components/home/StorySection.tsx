@@ -1,21 +1,25 @@
+"use client";
 import React from "react";
 import { FaCheckCircle, FaLeaf, FaHandHoldingHeart, FaOm } from "react-icons/fa";
+import { useLanguage } from "@/context/LanguageContext";
 
 const StorySection = () => {
+  const { t } = useLanguage();
+
   const features = [
     {
-      title: "Traditional Craftsmanship",
-      description: "Our dhoop battis are handcrafted using age-old techniques passed down through generations, ensuring authentic quality and pure fragrance.",
+      title: t("story.feature_1_title"),
+      description: t("story.feature_1_desc"),
       icon: <FaHandHoldingHeart className="text-4xl text-warm-gold-500 mb-4" />,
     },
     {
-      title: "Natural Ingredients",
-      description: "We source only the finest natural ingredients, including herbs, essential oils, and pure flowers, to create our premium dhoop battis.",
+      title: t("story.feature_2_title"),
+      description: t("story.feature_2_desc"),
       icon: <FaLeaf className="text-4xl text-warm-gold-500 mb-4" />,
     },
     {
-      title: "Spiritual Connection",
-      description: "Each dhoop batti is crafted with devotion, helping create a serene atmosphere for meditation and spiritual practices.",
+      title: t("story.feature_3_title"),
+      description: t("story.feature_3_desc"),
       icon: <FaOm className="text-4xl text-warm-gold-500 mb-4" />,
     },
   ];
@@ -28,9 +32,12 @@ const StorySection = () => {
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4">
-            Our Story & <span className="text-gradient">Heritage</span>
+            {t("story.title")}
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-warm-gold-300 to-warm-gold-500 mx-auto rounded-full"></div>
+          <p className="text-xl text-warm-gold-400 mt-4 font-serif italic">
+            {t("story.subtitle")}
+          </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
@@ -49,16 +56,16 @@ const StorySection = () => {
         <div className="mt-16 glass-card p-8 md:p-12 rounded-3xl">
           <div className="flex flex-col md:flex-row items-center justify-between gap-12">
             <div className="md:w-1/2">
-              <h3 className="text-3xl font-serif font-bold text-white mb-6">Why Choose Us?</h3>
+              <h3 className="text-3xl font-serif font-bold text-white mb-6">{t("story.title")}</h3>
               <p className="text-gray-300 mb-8 text-lg">
-                We are dedicated to bringing you the purest spiritual experience through our meticulously crafted products.
+                {t("story.description")}
               </p>
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {[
-                  "100% Natural Ingredients",
-                  "Eco-friendly Packaging",
-                  "Quality Assurance",
-                  "Traditional Methods"
+                  t("hero.badge_natural"),
+                  t("hero.badge_eco"),
+                  t("bulk.benefits.1"),
+                  t("hero.badge_handcrafted")
                 ].map((item, i) => (
                   <li key={i} className="flex items-center text-gray-200">
                     <FaCheckCircle className="text-warm-gold-500 mr-3 flex-shrink-0" />

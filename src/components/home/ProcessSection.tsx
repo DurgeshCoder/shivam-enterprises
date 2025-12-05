@@ -2,29 +2,32 @@
 import React from "react";
 import { FaLeaf, FaHands, FaSun, FaCheckCircle } from "react-icons/fa";
 import { motion } from "framer-motion";
-
-const steps = [
-    {
-        id: 1,
-        title: "Selecting Natural Ingredients",
-        description: "We source the finest herbs, flowers, and essential oils from nature to ensure purity.",
-        icon: <FaLeaf className="text-3xl" />,
-    },
-    {
-        id: 2,
-        title: "Handcrafting with Tradition",
-        description: "Our artisans use age-old traditional methods to hand-roll each dhoop batti with care.",
-        icon: <FaHands className="text-3xl" />,
-    },
-    {
-        id: 3,
-        title: "Drying, Packaging & Blessing",
-        description: "Naturally dried, eco-friendly packaged, and blessed for a divine spiritual experience.",
-        icon: <FaSun className="text-3xl" />,
-    },
-];
+import { useLanguage } from "@/context/LanguageContext";
 
 const ProcessSection = () => {
+    const { t } = useLanguage();
+
+    const steps = [
+        {
+            id: 1,
+            title: t("process.steps.1.title"),
+            description: t("process.steps.1.desc"),
+            icon: <FaLeaf className="text-3xl" />,
+        },
+        {
+            id: 2,
+            title: t("process.steps.2.title"),
+            description: t("process.steps.2.desc"),
+            icon: <FaHands className="text-3xl" />,
+        },
+        {
+            id: 3,
+            title: t("process.steps.3.title"),
+            description: t("process.steps.3.desc"),
+            icon: <FaSun className="text-3xl" />,
+        },
+    ];
+
     return (
         <section className="relative py-24 px-6 bg-deep-purple-900 overflow-hidden">
             {/* Background Gradient/Glow */}
@@ -39,7 +42,7 @@ const ProcessSection = () => {
                         viewport={{ once: true }}
                         className="text-4xl md:text-5xl font-serif font-bold text-white mb-4"
                     >
-                        How Our <span className="text-gradient">Dhoop Batti</span> is Made
+                        {t("process.title")}
                     </motion.h2>
                     <motion.div
                         initial={{ width: 0 }}

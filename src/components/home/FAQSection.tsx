@@ -2,42 +2,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaPlus, FaMinus } from "react-icons/fa";
-
-const faqs = [
-    {
-        question: "Are your dhoop battis made from 100% natural ingredients?",
-        answer:
-            "Yes, absolutely. We use only 100% natural ingredients including pure cow dung, natural herbs, flowers, and essential oils. We do not use any charcoal or harmful chemicals.",
-    },
-    {
-        question: "Do you use any chemicals or synthetic fragrances?",
-        answer:
-            "No, we strictly avoid synthetic fragrances and chemicals. Our fragrances come from natural essential oils and dried flowers, ensuring a safe and divine experience.",
-    },
-    {
-        question: "How long does one dhoop batti burn?",
-        answer:
-            "Our handcrafted dhoop battis are designed to burn for approximately 45 to 60 minutes, providing a long-lasting and soothing aroma for your puja or meditation.",
-    },
-    {
-        question: "Do you provide bulk or temple orders?",
-        answer:
-            "Yes, we specialize in bulk orders for temples, yoga centers, and retail shops. We offer special wholesale pricing and custom packaging options. Please check our 'Bulk & Temple Orders' section for more details.",
-    },
-    {
-        question: "How can I place an order via WhatsApp?",
-        answer: (
-            <>
-                It's very simple! Just click on the 'Buy on WhatsApp' button anywhere on our website or visit our <a href="#contact" className="text-warm-gold-400 hover:underline">Contact section</a>. It will open a chat with us where you can tell us your requirements, and we will confirm your order instantly.
-            </>
-        ),
-    },
-    {
-        question: "Do you ship outside Dehradun?",
-        answer:
-            "Yes, we ship across India. While we are based in Dehradun, we ensure our premium dhoop battis reach you wherever you are. Shipping charges may vary based on location and order size.",
-    },
-];
+import { useLanguage } from "@/context/LanguageContext";
 
 const AccordionItem = ({
     question,
@@ -91,6 +56,38 @@ const AccordionItem = ({
 
 const FAQSection = () => {
     const [openIndex, setOpenIndex] = useState<number | null>(0);
+    const { t } = useLanguage();
+
+    const faqs = [
+        {
+            question: t("faq.questions.1.q"),
+            answer: t("faq.questions.1.a"),
+        },
+        {
+            question: t("faq.questions.2.q"),
+            answer: t("faq.questions.2.a"),
+        },
+        {
+            question: t("faq.questions.3.q"),
+            answer: t("faq.questions.3.a"),
+        },
+        {
+            question: t("faq.questions.4.q"),
+            answer: t("faq.questions.4.a"),
+        },
+        {
+            question: t("faq.questions.5.q"),
+            answer: (
+                <>
+                    {t("faq.questions.5.a")}
+                </>
+            ),
+        },
+        {
+            question: t("faq.questions.6.q"),
+            answer: t("faq.questions.6.a"),
+        },
+    ];
 
     return (
         <section id="faq" className="relative py-24 px-6 bg-deep-purple-950 overflow-hidden">
@@ -106,7 +103,7 @@ const FAQSection = () => {
                         viewport={{ once: true }}
                         className="text-4xl md:text-5xl font-serif font-bold text-white mb-4"
                     >
-                        Frequently Asked <span className="text-gradient">Questions</span>
+                        {t("faq.title")}
                     </motion.h2>
                     <motion.div
                         initial={{ width: 0 }}
@@ -115,7 +112,7 @@ const FAQSection = () => {
                         className="h-1 bg-gradient-to-r from-warm-gold-300 to-warm-gold-500 mx-auto rounded-full"
                     ></motion.div>
                     <p className="text-gray-400 mt-6 text-lg">
-                        Have questions? We're here to help you understand our products better.
+                        {t("faq.subtitle")}
                     </p>
                 </div>
 

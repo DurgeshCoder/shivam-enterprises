@@ -7,48 +7,46 @@ import "swiper/css/pagination";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { FaStar, FaChevronLeft, FaChevronRight, FaQuoteLeft } from "react-icons/fa";
 import type { Swiper as SwiperType } from "swiper";
-
-const testimonials = [
-  {
-    id: 1,
-    name: "Rajesh Kumar",
-    role: "Regular Customer",
-    review:
-      "The fragrance of these dhoop battis is amazing! Creates such a peaceful atmosphere during my morning meditation.",
-    rating: 5,
-    initial: "R",
-  },
-  {
-    id: 2,
-    name: "Priya Sharma",
-    role: "Verified Buyer",
-    review:
-      "Pure and natural ingredients. I love how long-lasting these dhoop battis are. Will definitely buy again!",
-    rating: 5,
-    initial: "P",
-  },
-  {
-    id: 3,
-    name: "Amit Patel",
-    role: "Temple Committee",
-    review:
-      "We use these dhoop battis in our temple daily. The quality is consistently excellent.",
-    rating: 5,
-    initial: "A",
-  },
-  {
-    id: 4,
-    name: "Anita Kapoor",
-    role: "Yoga Instructor",
-    review:
-      "I recommend these dhoop battis to all my clients for their yoga sessions. Such calming energy!",
-    rating: 5,
-    initial: "A",
-  },
-];
+import { useLanguage } from "@/context/LanguageContext";
 
 const TestimonialSection = () => {
   const swiperRef = useRef<SwiperType | null>(null);
+  const { t } = useLanguage();
+
+  const testimonials = [
+    {
+      id: 1,
+      name: t("testimonials.items.1.name"),
+      role: t("testimonials.items.1.role"),
+      review: t("testimonials.items.1.review"),
+      rating: 5,
+      initial: "R",
+    },
+    {
+      id: 2,
+      name: t("testimonials.items.2.name"),
+      role: t("testimonials.items.2.role"),
+      review: t("testimonials.items.2.review"),
+      rating: 5,
+      initial: "P",
+    },
+    {
+      id: 3,
+      name: t("testimonials.items.3.name"),
+      role: t("testimonials.items.3.role"),
+      review: t("testimonials.items.3.review"),
+      rating: 5,
+      initial: "A",
+    },
+    {
+      id: 4,
+      name: t("testimonials.items.4.name"),
+      role: t("testimonials.items.4.role"),
+      review: t("testimonials.items.4.review"),
+      rating: 5,
+      initial: "A",
+    },
+  ];
 
   return (
     <section id="testimonials" className="relative py-24 px-6 bg-deep-purple-950 overflow-hidden">
@@ -58,9 +56,12 @@ const TestimonialSection = () => {
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4">
-            What Our <span className="text-gradient">Customers Say</span>
+            {t("testimonials.title")}
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-warm-gold-300 to-warm-gold-500 mx-auto rounded-full"></div>
+          <p className="text-gray-300 mt-4 text-lg">
+            {t("testimonials.subtitle")}
+          </p>
         </div>
 
         <div className="relative">

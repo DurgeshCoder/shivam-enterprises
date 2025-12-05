@@ -10,7 +10,7 @@ type Translations = typeof en;
 interface LanguageContextType {
     language: Language;
     setLanguage: (lang: Language) => void;
-    t: (key: string) => string;
+    t: (key: string) => any;
     toggleLanguage: () => void;
 }
 
@@ -24,13 +24,9 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
     // Initialize language based on URL or localStorage
     useEffect(() => {
         const isHindiPath = pathname?.startsWith("/hi");
-        if (isHindiPath) {
-            setLanguageState("hi");
-        } else {
-            // Check localStorage only if we are at root (to avoid redirect loops if we want to implement auto-redirect later)
-            // For now, URL is truth.
-            setLanguageState("en");
-        }
+        const newLang = isHindiPath ? "hi" : "en";
+        setLanguageState(newLang);
+        document.documentElement.lang = newLang;
     }, [pathname]);
 
     const setLanguage = (lang: Language) => {
@@ -49,7 +45,7 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
         setLanguage(language === "en" ? "hi" : "en");
     };
 
-    const t = (key: string): string => {
+    const t = (key: string): any => {
         const keys = key.split(".");
         let value: any = language === "en" ? en : hi;
 
@@ -61,7 +57,7 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
             }
         }
 
-        return typeof value === "string" ? value : key;
+        return value;
     };
 
     return (

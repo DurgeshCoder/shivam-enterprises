@@ -17,6 +17,7 @@ import product8 from "@/assets/products/product8.jpeg";
 
 import { Autoplay, Pagination, EffectCoverflow } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { useLanguage } from "@/context/LanguageContext";
 
 const products = [
   {
@@ -42,6 +43,7 @@ const products = [
 ];
 
 const ProductSection = () => {
+  const { t } = useLanguage();
   return (
     <section id="products" className="relative py-24 px-6 bg-deep-purple-900 overflow-hidden">
       {/* Background Glow */}
@@ -130,7 +132,7 @@ const ProductSection = () => {
                       target="_blank"
                     >
                       <button className="w-full md:w-auto px-12 py-4 bg-warm-gold-500 hover:bg-warm-gold-600 text-deep-purple-900 font-bold rounded-full shadow-lg shadow-warm-gold-500/20 transition-all hover:scale-105 hover:shadow-warm-gold-500/40 text-lg">
-                        Buy Now
+                        {t("products.buy_now")}
                       </button>
                     </Link>
                   </div>

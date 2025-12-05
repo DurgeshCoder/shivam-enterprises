@@ -40,7 +40,7 @@ export default {
         },
       },
       fontFamily: {
-        sans: ["var(--font-inter)", "sans-serif"],
+        sans: ["var(--font-inter)", "var(--font-noto-sans-devanagari)", "sans-serif"],
         serif: ["var(--font-playfair)", "serif"],
       },
       backgroundImage: {

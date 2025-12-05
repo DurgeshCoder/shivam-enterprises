@@ -15,8 +15,10 @@ import Link from "next/link";
 import Image from "next/image";
 import { FaWhatsapp, FaLeaf, FaHandHoldingHeart, FaBoxOpen } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { useLanguage } from "@/context/LanguageContext";
 
 const HeroSection = () => {
+  const { t } = useLanguage();
   const slides = [dhoopPic1, dhoopPic2, dhoopPic3, dhoopPic4, dhoopPic5];
 
   return (
@@ -83,12 +85,12 @@ const HeroSection = () => {
             <Link href="https://wa.me/919634921654?text=I want buy dhoop batti" target="_blank">
               <button className="w-full sm:w-auto px-8 py-4 bg-warm-gold-500 hover:bg-warm-gold-600 text-deep-purple-900 font-bold rounded-full shadow-lg shadow-warm-gold-500/20 transition-all hover:scale-105 hover:shadow-warm-gold-500/40 flex items-center justify-center gap-2 relative overflow-hidden group">
                 <span className="absolute inset-0 w-full h-full bg-white/20 transform -translate-x-full group-hover:translate-x-full transition-transform duration-500 ease-in-out"></span>
-                <FaWhatsapp className="text-xl" /> Buy on WhatsApp
+                <FaWhatsapp className="text-xl" /> {t("hero.cta_whatsapp")}
               </button>
             </Link>
             <Link href="#products">
               <button className="w-full sm:w-auto px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white font-semibold rounded-full transition-all hover:scale-105">
-                View Products
+                {t("hero.cta_products")}
               </button>
             </Link>
           </motion.div>

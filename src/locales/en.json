@@ -96,7 +96,29 @@
     },
     "testimonials": {
         "title": "What Our Customers Say",
-        "subtitle": "Real stories from people who love our products."
+        "subtitle": "Real stories from people who love our products.",
+        "items": {
+            "1": {
+                "name": "Rajesh Kumar",
+                "role": "Regular Customer",
+                "review": "The fragrance of these dhoop battis is amazing! Creates such a peaceful atmosphere during my morning meditation."
+            },
+            "2": {
+                "name": "Priya Sharma",
+                "role": "Verified Buyer",
+                "review": "Pure and natural ingredients. I love how long-lasting these dhoop battis are. Will definitely buy again!"
+            },
+            "3": {
+                "name": "Amit Patel",
+                "role": "Temple Committee",
+                "review": "We use these dhoop battis in our temple daily. The quality is consistently excellent."
+            },
+            "4": {
+                "name": "Anita Kapoor",
+                "role": "Yoga Instructor",
+                "review": "I recommend these dhoop battis to all my clients for their yoga sessions. Such calming energy!"
+            }
+        }
     },
     "bulk": {
         "title": "Bulk & Temple Orders",

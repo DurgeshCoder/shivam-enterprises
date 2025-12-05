@@ -1,31 +1,32 @@
+"use client";
 import React from "react";
 import { FaHeart, FaMoon, FaHome } from "react-icons/fa";
-
-const benefits = [
-  {
-    id: 1,
-    title: "Stress Relief",
-    description:
-      "Natural aromatherapy properties help reduce stress and anxiety, promoting mental wellness.",
-    icon: <FaHeart className="text-3xl" />,
-  },
-  {
-    id: 2,
-    title: "Better Sleep",
-    description:
-      "Calming fragrances help create a peaceful environment conducive to quality sleep.",
-    icon: <FaMoon className="text-3xl" />,
-  },
-  {
-    id: 3,
-    title: "Home Purification",
-    description:
-      "Natural fragrances help purify the air and create a soothing atmosphere for your home.",
-    icon: <FaHome className="text-3xl" />,
-  },
-];
+import { useLanguage } from "@/context/LanguageContext";
 
 const BenefitsSection = () => {
+  const { t } = useLanguage();
+
+  const benefits = [
+    {
+      id: 1,
+      title: t("benefits.items.stress_relief.title"),
+      description: t("benefits.items.stress_relief.desc"),
+      icon: <FaHeart className="text-3xl" />,
+    },
+    {
+      id: 2,
+      title: t("benefits.items.better_sleep.title"),
+      description: t("benefits.items.better_sleep.desc"),
+      icon: <FaMoon className="text-3xl" />,
+    },
+    {
+      id: 3,
+      title: t("benefits.items.home_purification.title"),
+      description: t("benefits.items.home_purification.desc"),
+      icon: <FaHome className="text-3xl" />,
+    },
+  ];
+
   return (
     <section className="relative py-24 px-6 bg-deep-purple-950 overflow-hidden">
       {/* Background Glow */}
@@ -35,10 +36,10 @@ const BenefitsSection = () => {
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-20">
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4">
-            Why Choose Our <span className="text-gradient">Dhoop Batti?</span>
+            {t("benefits.title")}
           </h2>
           <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-            Discover the unique benefits of our handcrafted, natural products designed for your well-being.
+            {t("benefits.subtitle")}
           </p>
           <div className="w-24 h-1 bg-gradient-to-r from-warm-gold-300 to-warm-gold-500 mx-auto rounded-full mt-6"></div>
         </div>

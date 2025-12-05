@@ -3,15 +3,12 @@ import React from "react";
 import { FaPhoneAlt, FaWhatsapp, FaCheckCircle, FaOm, FaStore, FaSpa } from "react-icons/fa";
 import { motion } from "framer-motion";
 import Link from "next/link";
-
-const benefits = [
-    "Special Wholesale Pricing",
-    "Consistent Premium Quality",
-    "Reliable Regular Supply",
-    "Custom Packaging Options",
-];
+import { useLanguage } from "@/context/LanguageContext";
 
 const BulkOrdersSection = () => {
+    const { t } = useLanguage();
+    const benefits = t("bulk.benefits") as string[];
+
     return (
         <section className="relative py-24 px-6 bg-deep-purple-900 overflow-hidden">
             {/* Background Glow */}
@@ -30,12 +27,11 @@ const BulkOrdersSection = () => {
                     <div className="absolute bottom-0 right-0 w-20 h-20 border-b-4 border-r-4 border-warm-gold-500/30 rounded-br-3xl"></div>
 
                     <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-6">
-                        Bulk & <span className="text-warm-gold-400">Temple Orders</span>
+                        {t("bulk.title")}
                     </h2>
 
                     <p className="text-lg text-gray-300 max-w-3xl mx-auto mb-10 leading-relaxed">
-                        We invite <span className="text-white font-semibold">Temples, Yoga Centers, and Retail Shops</span> to partner with us.
-                        Bring the divine fragrance of pure, handcrafted dhoop batti to your devotees and customers.
+                        {t("bulk.description")}
                     </p>
 
                     {/* Icons Row */}
@@ -59,12 +55,12 @@ const BulkOrdersSection = () => {
                     <div className="flex flex-col sm:flex-row gap-6 justify-center">
                         <Link href="tel:+919634921654">
                             <button className="w-full sm:w-auto px-8 py-4 bg-white text-deep-purple-900 font-bold rounded-full shadow-lg hover:bg-gray-100 transition-all hover:scale-105 flex items-center justify-center gap-2">
-                                <FaPhoneAlt /> Call Now
+                                <FaPhoneAlt /> {t("bulk.cta_call")}
                             </button>
                         </Link>
                         <Link href="https://wa.me/919634921654?text=I am interested in bulk orders" target="_blank">
                             <button className="w-full sm:w-auto px-8 py-4 bg-warm-gold-500 text-deep-purple-900 font-bold rounded-full shadow-lg shadow-warm-gold-500/20 hover:bg-warm-gold-600 transition-all hover:scale-105 flex items-center justify-center gap-2">
-                                <FaWhatsapp className="text-xl" /> WhatsApp Us
+                                <FaWhatsapp className="text-xl" /> {t("bulk.cta_whatsapp")}
                             </button>
                         </Link>
                     </div>
