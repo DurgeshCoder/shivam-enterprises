@@ -7,11 +7,11 @@ import SlideUp from "@/components/SlideUp";
 import Script from "next/script";
 
 export const metadata: Metadata = {
-  title: "Pure Natural Dhoop Batti | Handcrafted Incense | Shivam Enterprises",
+  title: "pujaitem.in | Pure Natural Dhoop Batti by Shivam Enterprises",
   description:
-    "Buy handcrafted 100% natural dhoop batti & agarbatti from Shivam Enterprises, Dehradun. Pure fragrance for puja, temples, and wholesale distributors.",
+    "Buy handcrafted 100% natural dhoop batti & agarbatti from Shivam Enterprises, Dehradun. Visit pujaitem.in for pure fragrance for puja, temples, and wholesale.",
   keywords:
-    "Dhoop Batti manufacturer, pure dhoop batti supplier, wholesale agarbatti supplier india, natural incense sticks",
+    "Shivam Enterprises Dehradun, pujaitem.in, Dhoop Batti manufacturer, pure dhoop batti supplier, wholesale agarbatti supplier india, natural incense sticks",
   alternates: {
     canonical: "https://www.pujaitem.in",
   },
@@ -24,8 +24,9 @@ export default function Home() {
       {
         "@type": "LocalBusiness",
         "name": "Shivam Enterprises",
+        "url": "https://www.pujaitem.in",
         "image": "https://www.pujaitem.in/logo.png",
-        "description": "Premium manufacturer of 100% pure, natural, and charcoal-free dhoop batti in Dehradun.",
+        "description": "Premium manufacturer of 100% pure, natural, and charcoal-free dhoop batti. The trademark brand behind pujaitem.in.",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "Prem Vihar Colony (Near Sai Garden), Haripur Kala",

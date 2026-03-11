@@ -143,18 +143,6 @@ const HeroSection = () => {
           </div>
         </motion.div>
       </div>
-
-      {/* Floating WhatsApp Button */}
-      <Link
-        href="https://wa.me/919634921654?text=Hi Shivam Enterprises, I am looking for your bulk pricing catalog."
-        target="_blank"
-        className="fixed bottom-24 right-6 z-50 animate-float"
-      >
-        <div className="bg-[#25D366] hover:bg-[#20bd5a] text-white p-4 rounded-full shadow-lg shadow-green-500/30 transition-all hover:scale-110 flex items-center justify-center relative overflow-hidden">
-          <div className="absolute inset-0 rounded-full border-2 border-white/30 animate-ping"></div>
-          <FaWhatsapp className="text-3xl relative z-10" />
-        </div>
-      </Link>
     </section>
   );
 };

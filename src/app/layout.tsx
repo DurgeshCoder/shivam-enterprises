@@ -7,6 +7,7 @@ import CustomNavbar from "@/components/CustomNavbar";
 import ScrollToTop from "@/components/ScrollToTop";
 import ReadingProgressBar from "@/components/ReadingProgressBar";
 import { LanguageProvider } from "@/context/LanguageContext";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -24,8 +25,21 @@ const notoSansDevanagari = Noto_Sans_Devanagari({
 });
 
 export const metadata: Metadata = {
-  title: "Shivam Enterprises - Pure & Natural Dhoop Batti",
-  description: "Shop handcrafted pure and natural Dhoop Batti made with authentic ingredients.",
+  metadataBase: new URL('https://www.pujaitem.in'),
+  title: {
+    default: "Shivam Enterprises | Premium Dhoop Batti Manufacturer in Dehradun",
+    template: "%s | Shivam Enterprises - pujaitem.in"
+  },
+  description: "Shivam Enterprises configures India's most authentic pure & natural Dhoop Batti. Order handcrafted agarbatti directly from our Dehradun manufacturer explicitly at pujaitem.in.",
+  keywords: ["Shivam Enterprises", "pujaitem.in", "Dhoop Batti", "Agarbatti", "Wholesale incense", "Natural Dhoop India", "Dehradun Dhoop Manufacturer"],
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    url: "https://www.pujaitem.in",
+    siteName: "Shivam Enterprises",
+    title: "Shivam Enterprises | Natural Dhoop Batti Manufacturer",
+    description: "Wholesale manufacturer of organic, charcoal-free agarbatti from Dehradun. Visit pujaitem.in for premium temple supplies.",
+  },
 };
 
 export default function RootLayout({
@@ -41,6 +55,7 @@ export default function RootLayout({
           <CustomNavbar />
           <Flowbite>{children}</Flowbite>
           <Footer />
+          <FloatingWhatsApp />
           <ScrollToTop />
         </LanguageProvider>
       </body>

@@ -1,8 +1,12 @@
 import { Metadata } from "next";
+import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Contact Us for Bulk Wholesale Agarbatti | Shivam Enterprises",
-  description: "Get in touch for temple orders, retail distribution, and bulk dhoop batti. Located in Haripur Kala, Dehradun.",
+  title: "Contact Shivam Enterprises | Wholesale Agarbatti by pujaitem.in",
+  description: "Get in touch with Shivam Enterprises for temple orders, retail distribution, and bulk dhoop batti imports. Located in Haripur Kala, Dehradun. Visit pujaitem.in.",
+  alternates: {
+    canonical: "https://www.pujaitem.in/contact-us",
+  },
 };
 
 export default function ContactUsPage() {
@@ -35,27 +39,7 @@ export default function ContactUsPage() {
           {/* Form */}
           <div className="bg-sandalwood-50 p-8 md:p-12 rounded-3xl shadow-inner border border-sandalwood-200">
             <h2 className="text-2xl font-serif font-bold text-forest-900 mb-8">Send an Inquiry</h2>
-            <form className="space-y-6">
-              <div className="grid grid-cols-2 gap-4">
-                <input type="text" placeholder="First Name" className="w-full px-4 py-3 rounded-xl border border-sandalwood-200 bg-white focus:outline-none focus:ring-2 focus:ring-saffron-500" />
-                <input type="text" placeholder="Last Name" className="w-full px-4 py-3 rounded-xl border border-sandalwood-200 bg-white focus:outline-none focus:ring-2 focus:ring-saffron-500" />
-              </div>
-              <input type="tel" placeholder="Phone / WhatsApp Number" className="w-full px-4 py-3 rounded-xl border border-sandalwood-200 bg-white focus:outline-none focus:ring-2 focus:ring-saffron-500" />
-              
-              <select className="w-full px-4 py-3 rounded-xl border border-sandalwood-200 bg-white text-forest-700 focus:outline-none focus:ring-2 focus:ring-saffron-500">
-                <option value="">I am a...</option>
-                <option value="retail">Retailer</option>
-                <option value="wholesale">Distributor / Wholesaler</option>
-                <option value="temple">Temple Administrator</option>
-                <option value="personal">Personal Use Buyer</option>
-              </select>
-
-              <textarea rows={4} placeholder="How can we help you?" className="w-full px-4 py-3 rounded-xl border border-sandalwood-200 bg-white focus:outline-none focus:ring-2 focus:ring-saffron-500"></textarea>
-
-              <button type="button" className="w-full py-4 bg-forest-900 hover:bg-forest-800 text-white font-bold rounded-xl shadow-md transition-colors">
-                Send Message
-              </button>
-            </form>
+            <ContactForm />
           </div>
         </div>
       </div>
