@@ -2,6 +2,7 @@
 import React from "react";
 import { FaCheckCircle, FaLeaf, FaHandHoldingHeart, FaOm } from "react-icons/fa";
 import { useLanguage } from "@/context/LanguageContext";
+import dhoopPic1 from "@/assets/dhoop1.jpeg";
 
 const StorySection = () => {
   const { t } = useLanguage();
@@ -76,9 +77,19 @@ const StorySection = () => {
               </ul>
             </div>
             <div className="md:w-1/2 relative w-full">
-              <div className="aspect-video rounded-2xl bg-sandalwood-100 border border-sandalwood-200 flex items-center justify-center">
-                <span className="text-6xl text-forest-900/10 font-serif font-bold tracking-widest">PURE</span>
+
+              <div className="aspect-video rounded-2xl bg-sandalwood-100 border border-sandalwood-200 overflow-hidden relative shadow-lg">
+                <img 
+                  src={dhoopPic1.src}
+                  alt={t("story.title")}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-forest-900/20 to-transparent"></div>
+                <div className="absolute bottom-4 right-4 bg-white/90 backdrop-blur-sm px-4 py-1 rounded-full border border-sandalwood-100">
+                  <span className="text-xs font-serif font-bold tracking-widest text-forest-900 uppercase">Pure & Natural</span>
+                </div>
               </div>
+
             </div>
           </div>
         </div>
