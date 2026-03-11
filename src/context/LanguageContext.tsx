@@ -19,21 +19,8 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
     const pathname = usePathname();
     const router = useRouter();
-    const searchParams = useSearchParams();
     const [language, setLanguageState] = useState<Language>("en");
-
-    // Initialize language based on URL query parameter or localStorage
-    useEffect(() => {
-        const urlLang = searchParams?.get("lang") as Language;
-        const savedLang = localStorage.getItem("language") as Language;
-        
-        // Prioritize URL parameter, then localStorage, defaulting to 'en'
-        const initialLang = urlLang === "hi" || urlLang === "en" ? urlLang 
-                            : (savedLang === "hi" || savedLang === "en" ? savedLang : "en");
-        
-        setLanguageState(initialLang);
-        document.documentElement.lang = initialLang;
-    }, [searchParams]);
+    const [searchParamsStr, setSearchParamsStr] = useState("");
 
     const setLanguage = (newLang: Language) => {
         setLanguageState(newLang);
@@ -41,7 +28,7 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
         document.documentElement.lang = newLang;
 
         // Create a new URLSearchParams object from the current ones
-        const currentParams = new URLSearchParams(Array.from(searchParams?.entries() || []));
+        const currentParams = new URLSearchParams(searchParamsStr);
         
         // Update or delete the 'lang' parameter based on whether it is Hindi or English default
         if (newLang === "hi") {
@@ -77,9 +64,33 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
 
     return (
         <LanguageContext.Provider value={{ language, setLanguage, t, toggleLanguage }}>
+            <React.Suspense fallback={null}>
+                <LanguageUpdater setLanguageState={setLanguageState} setSearchParamsStr={setSearchParamsStr} />
+            </React.Suspense>
             {children}
         </LanguageContext.Provider>
     );
+};
+
+const LanguageUpdater = ({ setLanguageState, setSearchParamsStr }: any) => {
+    const searchParams = useSearchParams();
+    
+    useEffect(() => {
+        const urlLang = searchParams?.get("lang") as Language;
+        const savedLang = localStorage.getItem("language") as Language;
+        
+        const initialLang = urlLang === "hi" || urlLang === "en" ? urlLang 
+                            : (savedLang === "hi" || savedLang === "en" ? savedLang : "en");
+        
+        setLanguageState(initialLang);
+        document.documentElement.lang = initialLang;
+    }, [searchParams, setLanguageState]);
+
+    useEffect(() => {
+        setSearchParamsStr(searchParams?.toString() || "");
+    }, [searchParams, setSearchParamsStr]);
+
+    return null;
 };
 
 export const useLanguage = () => {
