@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --background: #1a0b2e;
-  --foreground: #ffffff;
+  --background: #fafafa;
+  --foreground: #2e4a29;
 }
 
 body {
@@ -17,7 +17,7 @@ body {
   .glass-card {
     @apply bg-white/5 backdrop-blur-lg border border-white/10 shadow-xl;
   }
-  
+
   .text-gradient {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-warm-gold-300 to-warm-gold-500;
   }

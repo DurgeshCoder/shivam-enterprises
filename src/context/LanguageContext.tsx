@@ -1,6 +1,6 @@
 "use client";
 import React, { createContext, useContext, useState, useEffect, ReactNode } from "react";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import en from "@/locales/en.json";
 import hi from "@/locales/hi.json";
 
@@ -19,26 +19,41 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
     const pathname = usePathname();
     const router = useRouter();
+    const searchParams = useSearchParams();
     const [language, setLanguageState] = useState<Language>("en");
 
-    // Initialize language based on URL or localStorage
+    // Initialize language based on URL query parameter or localStorage
     useEffect(() => {
-        const isHindiPath = pathname?.startsWith("/hi");
-        const newLang = isHindiPath ? "hi" : "en";
+        const urlLang = searchParams?.get("lang") as Language;
+        const savedLang = localStorage.getItem("language") as Language;
+        
+        // Prioritize URL parameter, then localStorage, defaulting to 'en'
+        const initialLang = urlLang === "hi" || urlLang === "en" ? urlLang 
+                            : (savedLang === "hi" || savedLang === "en" ? savedLang : "en");
+        
+        setLanguageState(initialLang);
+        document.documentElement.lang = initialLang;
+    }, [searchParams]);
+
+    const setLanguage = (newLang: Language) => {
         setLanguageState(newLang);
+        localStorage.setItem("language", newLang);
         document.documentElement.lang = newLang;
-    }, [pathname]);
 
-    const setLanguage = (lang: Language) => {
-        setLanguageState(lang);
-        localStorage.setItem("language", lang);
-
-        // Handle Routing
-        if (lang === "hi" && !pathname?.startsWith("/hi")) {
-            router.push("/hi");
-        } else if (lang === "en" && pathname?.startsWith("/hi")) {
-            router.push("/");
+        // Create a new URLSearchParams object from the current ones
+        const currentParams = new URLSearchParams(Array.from(searchParams?.entries() || []));
+        
+        // Update or delete the 'lang' parameter based on whether it is Hindi or English default
+        if (newLang === "hi") {
+            currentParams.set("lang", "hi");
+        } else {
+            currentParams.delete("lang"); // Keep English URLs clean
         }
+
+        // Construct the new URL maintaining the current pathname and any other query params
+        const search = currentParams.toString();
+        const query = search ? `?${search}` : "";
+        router.push(`${pathname}${query}`);
     };
 
     const toggleLanguage = () => {

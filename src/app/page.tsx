@@ -1,129 +1,83 @@
 import HeroSection from "@/components/home/HeroSection";
 import StorySection from "@/components/home/StorySection";
-import ProductSection from "@/components/home/ProductSection";
-import ShopByNeedSection from "@/components/home/ShopByNeedSection";
-import BenefitsSection from "@/components/home/BenifitsSection";
-import ProcessSection from "@/components/home/ProcessSection";
 import TestimonialSection from "@/components/home/TestimonialSection";
 import BulkOrdersSection from "@/components/home/BulkOrdersSection";
-import FAQSection from "@/components/home/FAQSection";
-import ContactSection from "@/components/home/ContactSection";
 import { Metadata } from "next";
 import SlideUp from "@/components/SlideUp";
 import Script from "next/script";
+
 export const metadata: Metadata = {
-  title: "Pure Natural Dhoop Batti | Handcrafted Incense | Shivam Enterprises Dehradun",
+  title: "Pure Natural Dhoop Batti | Handcrafted Incense | Shivam Enterprises",
   description:
-    "Buy handcrafted 100% natural dhoop batti & incense sticks from Shivam Enterprises, Dehradun. Pure fragrance for puja, meditation & home. Order on WhatsApp!",
+    "Buy handcrafted 100% natural dhoop batti & agarbatti from Shivam Enterprises, Dehradun. Pure fragrance for puja, temples, and wholesale distributors.",
   keywords:
-    "Pure Dhoop Batti, Natural Incense Sticks, Handcrafted Dhoop Batti, Buy Dhoop Batti Online, Meditation Dhoop Batti, Spiritual Incense, Prem Vihar Colony Dhoop Batti, Haripur Kala Dehradun Dhoop Batti, Dehradun Incense Sticks, Relaxation Incense",
+    "Dhoop Batti manufacturer, pure dhoop batti supplier, wholesale agarbatti supplier india, natural incense sticks",
   alternates: {
     canonical: "https://www.pujaitem.in",
   },
 };
+
 export default function Home() {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Store",
-    "name": "Shivam Enterprises",
-    "image": "https://www.pujaitem.in/logo.png", // Assuming logo exists or generic
-    "description": "Handcrafted pure and natural Dhoop Batti made with authentic ingredients and traditional methods.",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Prem Vihar Colony (Near Sai Garden), Haripur Kala",
-      "addressLocality": "Dehradun",
-      "postalCode": "249205",
-      "addressCountry": "IN"
-    },
-    "telephone": "+919634921654",
-    "openingHoursSpecification": [
+    "@graph": [
       {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday",
-          "Saturday"
-        ],
-        "opens": "09:00",
-        "closes": "19:00"
+        "@type": "LocalBusiness",
+        "name": "Shivam Enterprises",
+        "image": "https://www.pujaitem.in/logo.png",
+        "description": "Premium manufacturer of 100% pure, natural, and charcoal-free dhoop batti in Dehradun.",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Prem Vihar Colony (Near Sai Garden), Haripur Kala",
+          "addressLocality": "Dehradun",
+          "postalCode": "249205",
+          "addressCountry": "IN"
+        },
+        "telephone": "+919634921654"
       },
       {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": "Sunday",
-        "opens": "10:00",
-        "closes": "14:00"
+        "@type": "Manufacturer",
+        "name": "Shivam Enterprises",
+        "description": "Bulk manufacturer and wholesale supplier of authentic spiritual incense and agarbatti.",
       }
-    ],
-    "priceRange": "₹₹",
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Dhoop Batti Products",
-      "itemListElement": [
-        {
-          "@type": "Product",
-          "name": "Premium Puja Cotton",
-          "description": "100% Pure Cotton for daily puja rituals.",
-          "offers": {
-            "@type": "Offer",
-            "price": "50",
-            "priceCurrency": "INR",
-            "availability": "https://schema.org/InStock"
-          }
-        },
-        {
-          "@type": "Product",
-          "name": "Natural Dhoop Batti",
-          "description": "Handcrafted with natural herbs and essential oils.",
-          "offers": {
-            "@type": "Offer",
-            "price": "120",
-            "priceCurrency": "INR",
-            "availability": "https://schema.org/InStock"
-          }
-        }
-      ]
-    }
+    ]
   };
 
   return (
-    <main className="bg-deep-purple-900 min-h-screen">
+    <main className="min-h-screen">
       <Script
         id="json-ld"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      
       <SlideUp>
         <HeroSection />
       </SlideUp>
+
+      {/* Trust Badges Bar */}
+      <div className="bg-forest-900 border-y border-sandalwood-300 py-6">
+        <div className="max-w-7xl mx-auto px-6 flex flex-wrap justify-between items-center text-center text-sandalwood-100 font-bold tracking-wide gap-4">
+          <span>🌿 100% Natural Herbs</span>
+          <span className="hidden md:inline">•</span>
+          <span>🚫 Zero Charcoal</span>
+          <span className="hidden md:inline">•</span>
+          <span>🤲 Handcrafted in Dehradun</span>
+          <span className="hidden md:inline">•</span>
+          <span>🚚 Pan-India Wholesale Delivery</span>
+        </div>
+      </div>
+
       <SlideUp>
         <StorySection />
       </SlideUp>
-      <SlideUp>
-        <ProductSection />
-      </SlideUp>
-      <SlideUp>
-        <ShopByNeedSection />
-      </SlideUp>
-      <SlideUp>
-        <BenefitsSection />
-      </SlideUp>
-      <SlideUp>
-        <ProcessSection />
-      </SlideUp>
+      
       <SlideUp>
         <TestimonialSection />
       </SlideUp>
+      
       <SlideUp>
         <BulkOrdersSection />
-      </SlideUp>
-      <SlideUp>
-        <FAQSection />
-      </SlideUp>
-      <SlideUp>
-        <ContactSection />
       </SlideUp>
     </main>
   );

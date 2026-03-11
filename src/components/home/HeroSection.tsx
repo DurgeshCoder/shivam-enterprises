@@ -22,15 +22,15 @@ const HeroSection = () => {
   const slides = [dhoopPic1, dhoopPic2, dhoopPic3, dhoopPic4, dhoopPic5];
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-deep-purple-900 pt-20">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-forest-900 to-forest-800 pt-20">
       {/* Background Effects */}
-      <div className="absolute inset-0 bg-hero-gradient opacity-90"></div>
+      <div className="absolute inset-0 bg-black/20 opacity-90"></div>
 
       {/* Light Rays / Glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full overflow-hidden pointer-events-none">
-        <div className="absolute top-[-50%] left-[-50%] w-[200%] h-[200%] bg-gradient-to-b from-warm-gold-500/10 via-transparent to-transparent rotate-45 blur-3xl animate-pulse-slow"></div>
-        <div className="absolute top-[-20%] right-[-20%] w-[800px] h-[800px] bg-deep-purple-500/30 rounded-full blur-[120px] animate-float"></div>
-        <div className="absolute bottom-[-20%] left-[-20%] w-[600px] h-[600px] bg-warm-gold-500/10 rounded-full blur-[100px] animate-float-delayed"></div>
+        <div className="absolute top-[-50%] left-[-50%] w-[200%] h-[200%] bg-gradient-to-b from-saffron-500/10 via-transparent to-transparent rotate-45 blur-3xl animate-pulse-slow"></div>
+        <div className="absolute top-[-20%] right-[-20%] w-[800px] h-[800px] bg-forest-700/30 rounded-full blur-[120px] animate-float"></div>
+        <div className="absolute bottom-[-20%] left-[-20%] w-[600px] h-[600px] bg-saffron-500/10 rounded-full blur-[100px] animate-float-delayed"></div>
       </div>
 
       {/* Particles (CSS only representation) */}
@@ -47,7 +47,7 @@ const HeroSection = () => {
           >
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold leading-tight text-white drop-shadow-2xl">
               Pure & Natural <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-warm-gold-300 to-warm-gold-500 animate-shimmer bg-[length:200%_100%]">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-saffron-400 to-saffron-500 animate-shimmer bg-[length:200%_100%]">
                 Dhoop Batti
               </span> <br />
               for Your Daily Puja
@@ -62,7 +62,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-            className="flex flex-wrap justify-center md:justify-start gap-4 text-sm font-medium text-warm-gold-300/90 uppercase tracking-wider"
+            className="flex flex-wrap justify-center md:justify-start gap-4 text-sm font-medium text-saffron-300/90 uppercase tracking-wider"
           >
             <span className="flex items-center gap-2 bg-white/5 px-3 py-1 rounded-full border border-white/10 hover:bg-white/10 transition-colors">
               <FaLeaf /> 100% Natural
@@ -82,10 +82,10 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
             className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-4"
           >
-            <Link href="https://wa.me/919634921654?text=I want buy dhoop batti" target="_blank">
-              <button className="w-full sm:w-auto px-8 py-4 bg-warm-gold-500 hover:bg-warm-gold-600 text-deep-purple-900 font-bold rounded-full shadow-lg shadow-warm-gold-500/20 transition-all hover:scale-105 hover:shadow-warm-gold-500/40 flex items-center justify-center gap-2 relative overflow-hidden group">
+            <Link href="https://wa.me/919634921654?text=Hi Shivam Enterprises, I am looking for your bulk pricing catalog." target="_blank">
+              <button className="w-full sm:w-auto px-8 py-4 bg-saffron-500 hover:bg-saffron-600 text-white font-bold rounded-full shadow-lg shadow-saffron-500/20 transition-all hover:scale-105 hover:shadow-saffron-500/40 flex items-center justify-center gap-2 relative overflow-hidden group">
                 <span className="absolute inset-0 w-full h-full bg-white/20 transform -translate-x-full group-hover:translate-x-full transition-transform duration-500 ease-in-out"></span>
-                <FaWhatsapp className="text-xl" /> {t("hero.cta_whatsapp")}
+                <FaWhatsapp className="text-xl" /> WhatsApp Inquiry
               </button>
             </Link>
             <Link href="#products">
@@ -105,7 +105,7 @@ const HeroSection = () => {
         >
           <div className="relative">
             {/* Glow behind image */}
-            <div className="absolute inset-0 bg-warm-gold-500/30 blur-[80px] rounded-full transform scale-90 animate-pulse-slow"></div>
+            <div className="absolute inset-0 bg-saffron-500/30 blur-[80px] rounded-full transform scale-90 animate-pulse-slow"></div>
 
             <Swiper
               effect="coverflow"
@@ -146,7 +146,7 @@ const HeroSection = () => {
 
       {/* Floating WhatsApp Button */}
       <Link
-        href="https://wa.me/919634921654?text=Hi, I'm interested in your Dhoop Batti products."
+        href="https://wa.me/919634921654?text=Hi Shivam Enterprises, I am looking for your bulk pricing catalog."
         target="_blank"
         className="fixed bottom-24 right-6 z-50 animate-float"
       >

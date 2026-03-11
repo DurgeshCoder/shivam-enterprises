@@ -24,7 +24,7 @@ const notoSansDevanagari = Noto_Sans_Devanagari({
 });
 
 export const metadata: Metadata = {
-  title: "PujaItem.in - Pure & Natural Dhoop Batti",
+  title: "Shivam Enterprises - Pure & Natural Dhoop Batti",
   description: "Shop handcrafted pure and natural Dhoop Batti made with authentic ingredients.",
 };
 
@@ -35,7 +35,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${playfair.variable} ${inter.variable} ${notoSansDevanagari.variable}`}>
-      <body className="bg-deep-purple-900 text-white font-sans antialiased selection:bg-warm-gold-500 selection:text-deep-purple-900">
+      <body className="bg-[#FAFAFA] text-forest-900 font-sans antialiased selection:bg-saffron-500 selection:text-white">
         <LanguageProvider>
           <ReadingProgressBar />
           <CustomNavbar />
